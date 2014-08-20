@@ -15,9 +15,8 @@ app.get('/play', function(req, res){
   res.send("Life is such!");
 })
 
-http.listen(port, function(){
-  console.log('listening on :'+port);
-});
+var server = http.createServer(app)
+server.listen(port)
 
 
 // wss.on("connection", function(ws) {
