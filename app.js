@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
+var port = process.env.PORT || 5000
 // var io = require('socket.io')(http);
 
 app.use('/', express.static(__dirname + '/public'));
@@ -14,8 +15,8 @@ app.get('/play', function(req, res){
   res.send("Life is such!");
 })
 
-http.listen(3000, function(){
-  console.log('listening on :3000');
+http.listen(port, function(){
+  console.log('listening on :'+port);
 });
 
 
