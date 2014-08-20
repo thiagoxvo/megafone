@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var http = require('http').Server(app);
+var http = require('http')
 var port = process.env.PORT || 5000
 // var io = require('socket.io')(http);
 
@@ -18,6 +18,7 @@ app.get('/play', function(req, res){
 var server = http.createServer(app)
 server.listen(port)
 
+console.log("http server listening on %d", port)
 
 // wss.on("connection", function(ws) {
 //   var id = setInterval(function() {
