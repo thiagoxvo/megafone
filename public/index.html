@@ -8,9 +8,9 @@
     <script src="/js/socket.io-1.0.6.js"></script>
     <script src="/js/buzz.min.js"> </script>
     <script>
-      var mySound = new buzz.sound("sad_trombone.mp3");
       var socket = io();
-      socket.on('play-sound', function(msg){
+      socket.on('play-sound', function(data){
+        var mySound = new buzz.sound(data.fileName);
         mySound.play();
       });
     </script>
