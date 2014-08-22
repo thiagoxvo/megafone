@@ -22,9 +22,10 @@ app.get('/', function(req, res){
 app.get('/play/:sound', function(req, res) {
   var fileName = getSoundFile(req.params.sound);
   console.log(fileName);
-  io.emit('play-sound', {fileName : fileName });
+  io.emit('play', {fileName : fileName });
   res.send("Playing... " + fileName);
-})
+});
+
 
 var port = process.env.PORT || 3000
 http.listen(port, function(){

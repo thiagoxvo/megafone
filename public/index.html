@@ -9,7 +9,7 @@
     <script src="/js/buzz.min.js"> </script>
     <script>
       var socket = io();
-      socket.on('play-sound', function(data){
+      socket.on('play', function(data){
         var mySound = new buzz.sound(data.fileName);
         mySound.play();
       });
