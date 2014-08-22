@@ -26,6 +26,10 @@ app.get('/play/:sound', function(req, res) {
   res.send("Playing... " + fileName);
 });
 
+app.get('/speech/:text', function(req, res){
+  io.emit('speech', {text:req.params.text});
+  res.send("Speaking... "+req.params.text);
+});
 
 var port = process.env.PORT || 3000
 http.listen(port, function(){
