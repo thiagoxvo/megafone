@@ -4,10 +4,20 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var _ = require('underscore');
 
-var sounds = [{
-  name : "sadtrombone",
-  file : "sad_trombone.mp3"
-}];
+var sounds = [
+  {
+    name : "sadtrombone",
+    file : "sad_trombone.mp3"
+  },
+  {
+    name : "mario-1-up",
+    file : "mario-1up.mp3"
+  },
+  {
+    name : "mario-mushroom",
+    file : "mario-extra-life.mp3"
+  }
+];
 
 var getSoundFile = function(sound){
   return _.findWhere(sounds, {name : sound}).file;
